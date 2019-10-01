@@ -20,6 +20,7 @@ const buildCss = () => src('./src/**/*.css')
 
 const minifyCss = () => src(['./dist/**/*.css', '!./dist/**/*.min.css'])
   .pipe(rename({extname: '.min.css'}))
+  .pipe(cleanCss())
   .pipe(dest('./dist/'));
 
 module.exports = {
