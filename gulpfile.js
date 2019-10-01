@@ -1,16 +1,21 @@
 const {src, dest,　watch, parallel, series} = require('gulp');
 const babel = require('gulp-babel');
+const eslint = require('gulp-eslint');
 const terser = require('gulp-terser');
 const rename = require('gulp-rename');
 const cleanCss = require('gulp-clean-css');
 
 const buildJs = () => src('./src/**/*.js')
+  .pipe(eslint())
+  .pipe(eslint.failOnError())
   .pipe(babel())
   .pipe(dest('./dist/'));
 
 const watchJs = () => watch('./src/**/*.js', buildJs);
 
 const minifyJs = () => src(['./dist/**/*.js', '!./dist/**/*.min.js'])
+  .pipe(eslint())
+  .pipe(eslint.failOnError())
   .pipe(terser({
     mangle: false,
   }))
