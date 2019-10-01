@@ -1,4 +1,4 @@
-const {src, watch, dest, parallel, series} = require('gulp');
+const {src, dest,　watch, parallel, series} = require('gulp');
 const babel = require('gulp-babel');
 const terser = require('gulp-terser');
 const rename = require('gulp-rename');

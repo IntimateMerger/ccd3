@@ -9,7 +9,9 @@
     "watch:js": "npx gulp watchJs",
     "watch:css": "npx gulp watchCss",
     "watch": "npx gulp watch",
+    "minify:js": "npx gulp minifyJs",
     "minify:css": "npx gulp minifyCss",
+    "minify": "npx gulp minify",
     "build": "npx gulp default"
   },
   "repository": {
