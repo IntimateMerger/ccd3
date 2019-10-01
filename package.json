@@ -6,6 +6,8 @@
   "scripts": {
     "build:js": "npx gulp buildJs",
     "build:css": "npx gulp buildCss",
+    "watch:js": "npx gulp watchJs",
+    "watch:css": "npx gulp watchCss",
     "minify:css": "npx gulp minifyCss",
     "build": "npx gulp default"
   },
