@@ -4,9 +4,10 @@
   "description": "customizable chart for d3.js",
   "main": "ccd3.js",
   "scripts": {
-    "build": "npx gulp default",
     "build:js": "npx gulp buildJs",
-    "build:css": "npx gulp buildCss"
+    "build:css": "npx gulp buildCss",
+    "minify:css": "npx gulp minifyCss",
+    "build": "npx gulp default"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.2.0",
+    "gulp-rename": "^1.4.0",
     "gulp-terser": "^1.2.0",
     "jasmine": "^3.5.0"
   },
