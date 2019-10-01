@@ -8,6 +8,7 @@
     "build:css": "npx gulp buildCss",
     "watch:js": "npx gulp watchJs",
     "watch:css": "npx gulp watchCss",
+    "watch": "npx gulp watch",
     "minify:css": "npx gulp minifyCss",
     "build": "npx gulp default"
   },

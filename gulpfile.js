@@ -33,6 +33,7 @@ module.exports = {
   build: parallel(buildJs, buildCss),
   watchJs,
   watchCss,
+  watch: parallel(watchJs, watchCss),
   minifyJs,
   minifyCss,
   minify: parallel(minifyCss, minifyJs),
