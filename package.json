@@ -17,6 +17,9 @@
     "minify": "npx gulp minify",
     "build": "npx gulp default"
   },
+  "engines": {
+    "node": "^10.13.0"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/g0e/ccd3.git"
