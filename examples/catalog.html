@@ -44,7 +44,6 @@
 		var div_id = "chart2-2";
 		d3.select("#charts").append("div").attr("id",div_id).style("margin","20px");
 		var data = fullData['chart2-2'];
-		data.pop();  // remove tan
 		var c = new ccd3.Chart(div_id,data);
 		c.default_series_type = "bar";
 		c.title = "Bar Chart Sample2";
@@ -77,7 +76,6 @@
 		var data = fullData['chart3-3'];
 		data[0].series_type = "stackedbar";
 		data[1].series_type = "stackedbar";
-		data.pop(); // remove tan
 		var c = new ccd3.Chart(div_id,data);
 		c.title = "StackedBar Chart Sample3";
 		c.render();
