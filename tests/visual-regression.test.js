@@ -9,6 +9,7 @@ const PAGE = `http://localhost:${PORT}/examples/catalog.html`;
 expect.extend({toMatchImageSnapshot});
 
 describe('puppeteer', () => {
+  let browser;
   let server;
   beforeAll(async () => {
     server = httpServer.createServer({
@@ -19,11 +20,12 @@ describe('puppeteer', () => {
   });
   
   afterAll(async () => {
+    await browser.close();
     server.close();
   });
 
   test('puppeteer', async () => {
-    const browser = await puppeteer.launch();
+    browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(PAGE, {
       waitUntil: 'networkidle2',
