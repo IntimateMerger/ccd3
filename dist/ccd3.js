@@ -1,7 +1,5 @@
 "use strict";
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 /**
 ccd3
 
@@ -376,7 +374,7 @@ var ccd3 = function () {
       if (this.xAxis.scale_type == "ordinal" && series_sortable) {
         if (this.yAxis.scale_type === "linear") {
           this.menu.add_menu({
-            func: function func(data) {
+            func: function (data) {
               this.sort_domain("x", "y", data.asc);
               data.asc = !data.asc;
             },
@@ -386,7 +384,7 @@ var ccd3 = function () {
 
         if (z_scale_type === "linear") {
           this.menu.add_menu({
-            func: function func(data) {
+            func: function (data) {
               this.sort_domain("x", "z", data.asc);
               data.asc = !data.asc;
             },
@@ -398,7 +396,7 @@ var ccd3 = function () {
       if (this.yAxis.scale_type == "ordinal" && series_sortable) {
         if (this.xAxis.scale_type === "linear") {
           this.menu.add_menu({
-            func: function func(data) {
+            func: function (data) {
               this.sort_domain("y", "x", data.asc);
               data.asc = !data.asc;
             },
@@ -408,7 +406,7 @@ var ccd3 = function () {
 
         if (z_scale_type === "linear") {
           this.menu.add_menu({
-            func: function func(data) {
+            func: function (data) {
               this.sort_domain("y", "z", data.asc);
               data.asc = !data.asc;
             },
@@ -418,7 +416,7 @@ var ccd3 = function () {
       }
     } else if (this.chart_pattern === "r") {
       this.menu.add_menu({
-        func: function func(data) {
+        func: function (data) {
           if (this.series[0].sort === undefined || this.series[0].sort === null || this.series[0].sort == "asc") {
             this.series[0].sort = "desc";
           } else {
@@ -938,7 +936,7 @@ var ccd3 = function () {
       xFormat: undefined,
       yFormat: undefined,
       zFormat: undefined,
-      annotation_func: function annotation_func() {
+      annotation_func: function () {
         return "";
       }
     };
@@ -1185,13 +1183,13 @@ var ccd3 = function () {
       menus: [{
         key: "csv",
         label: ccd3._("Download CSV"),
-        func: function func() {
+        func: function () {
           this.dataset_manager.download_as_csv(this.dataset_manager.to_csv());
         }
       }, {
         key: "reset",
         label: ccd3._("Refresh Chart"),
-        func: function func() {
+        func: function () {
           for (var i = 0, len = this.dataset.length; i < len; i++) {
             this.dataset[i].visible = true;
           }
@@ -1211,7 +1209,7 @@ var ccd3 = function () {
       }, {
         key: "close",
         label: ccd3._("Close Menu"),
-        func: function func() {
+        func: function () {
           this.menu.toggle_menu();
         }
       }],
@@ -1275,13 +1273,13 @@ var ccd3 = function () {
     var data = this.opened ? [] : this.menus;
     this.opened = !this.opened;
 
-    var closed_xy = function closed_xy(d, i) {
+    var closed_xy = function (d, i) {
       var x = that.icon_width + 20;
       var y = that.icon_top + that.icon_height + that.font_size + i * that.item_interval + 15;
       return "translate(" + x + "," + y + ")";
     };
 
-    var opened_xy = function opened_xy(d, i) {
+    var opened_xy = function (d, i) {
       var x = -1 * this.getBBox().width + that.icon_width + that.item_x_margin + 40;
       var y = that.icon_top + that.icon_height + that.font_size + i * that.item_interval + 15;
       return "translate(" + x + "," + y + ")";
@@ -1495,7 +1493,7 @@ var ccd3 = function () {
     var direction = this.direction;
 
     if (this.scale_type === "ordinal") {
-      func = function func(d) {
+      func = function (d) {
         return d[direction];
       };
 
@@ -1511,21 +1509,21 @@ var ccd3 = function () {
     } else {
       if (direction === "x") {
         if (this.scale_type === "date") {
-          func = function func(d) {
+          func = function (d) {
             return d.x;
           };
         } else {
-          func = function func(d) {
+          func = function (d) {
             return d.x + (d.x0 === undefined || d.x0 === null ? 0 : d.x0);
           };
         }
       } else if (direction === "y") {
         if (this.scale_type === "date") {
-          func = function func(d) {
+          func = function (d) {
             return d.y;
           };
         } else {
-          func = function func(d) {
+          func = function (d) {
             return d.y + (d.y0 === undefined || d.y0 === null ? 0 : d.y0);
           };
         }
@@ -1611,7 +1609,7 @@ var ccd3 = function () {
     if (this.show_label) {
       format = this.format;
     } else {
-      format = function format() {
+      format = function () {
         return "";
       };
     }
@@ -1669,7 +1667,7 @@ var ccd3 = function () {
     if (this.show_label) {
       format = this.format;
     } else {
-      format = function format() {
+      format = function () {
         return "";
       };
     }
@@ -1767,7 +1765,7 @@ var ccd3 = function () {
   };
 
   ccd3.Parts.rAxis.prototype.reset_domain = function () {
-    var func = function func(d) {
+    var func = function (d) {
       return d.y;
     }; //var min = this.chart.dataset_manager.get_min(func);
 
@@ -1864,7 +1862,7 @@ var ccd3 = function () {
   ccd3.Parts.aAxis.prototype.reset_domain = function () {
     var domain = [];
 
-    var func = function func(d) {
+    var func = function (d) {
       return d.x;
     };
 
@@ -2279,19 +2277,19 @@ var ccd3 = function () {
     var width2 = width * (1.0 - band_padding) / bar_cnt;
 
     if (this.chart.direction === "x") {
-      value_func = function value_func(d) {
+      value_func = function (d) {
         return d.y;
       };
 
-      width_func = function width_func() {
+      width_func = function () {
         return width2;
       };
 
-      height_func = function height_func(d) {
+      height_func = function (d) {
         return Math.abs(hScale(0) - hScale(d.y));
       };
 
-      xy_func = function xy_func(d) {
+      xy_func = function (d) {
         var x = wScale(d.x) + width2 * bar_pos + width * band_padding / 2;
 
         if (wAxis.scale_type !== "ordinal") {
@@ -2302,25 +2300,25 @@ var ccd3 = function () {
         return "translate(" + x + "," + y + ")";
       };
 
-      text_xy_func = function text_xy_func() {
+      text_xy_func = function () {
         var x = width2 / 2 - this.getBBox().height / 2;
         var y = this.getBBox().height / 2;
         return "translate(" + x + "," + y + ") rotate(90)";
       };
     } else {
-      value_func = function value_func(d) {
+      value_func = function (d) {
         return d.x;
       };
 
-      width_func = function width_func(d) {
+      width_func = function (d) {
         return Math.abs(hScale(0) - hScale(d.x));
       };
 
-      height_func = function height_func() {
+      height_func = function () {
         return width2;
       };
 
-      xy_func = function xy_func(d) {
+      xy_func = function (d) {
         var y = wScale(d.y) + width2 * bar_pos + width * band_padding / 2;
 
         if (wAxis.scale_type !== "ordinal") {
@@ -2331,7 +2329,7 @@ var ccd3 = function () {
         return "translate(" + x + "," + y + ")";
       };
 
-      text_xy_func = function text_xy_func(d) {
+      text_xy_func = function (d) {
         var y = width2 / 2 + this.getBBox().height / 2;
         var x = hScale(d.x) - this.getBBox().width;
 
@@ -2452,19 +2450,19 @@ var ccd3 = function () {
     var width2 = width * (1.0 - band_padding);
 
     if (this.chart.direction === "x") {
-      value_func = function value_func(d) {
+      value_func = function (d) {
         return d.y;
       };
 
-      width_func = function width_func() {
+      width_func = function () {
         return width2;
       };
 
-      height_func = function height_func(d) {
+      height_func = function (d) {
         return Math.abs(hScale(d.y0) - hScale(d.y + d.y0));
       };
 
-      xy_func = function xy_func(d) {
+      xy_func = function (d) {
         var x = wScale(d.x) + width * band_padding / 2;
 
         if (wAxis.scale_type !== "ordinal") {
@@ -2475,25 +2473,25 @@ var ccd3 = function () {
         return "translate(" + x + "," + y + ")";
       };
 
-      text_xy_func = function text_xy_func() {
+      text_xy_func = function () {
         var x = width2 / 2 - this.getBBox().height / 2;
         var y = this.getBBox().height / 2;
         return "translate(" + x + "," + y + ") rotate(90)";
       };
     } else {
-      value_func = function value_func(d) {
+      value_func = function (d) {
         return d.x;
       };
 
-      width_func = function width_func(d) {
+      width_func = function (d) {
         return Math.abs(hScale(d.x0) - hScale(d.x + d.x0));
       };
 
-      height_func = function height_func() {
+      height_func = function () {
         return width2;
       };
 
-      xy_func = function xy_func(d) {
+      xy_func = function (d) {
         var y = wScale(d.y) + width * band_padding / 2;
 
         if (wAxis.scale_type !== "ordinal") {
@@ -2504,7 +2502,7 @@ var ccd3 = function () {
         return "translate(" + x + "," + y + ")";
       };
 
-      text_xy_func = function text_xy_func(d) {
+      text_xy_func = function (d) {
         var y = width2 / 2 + this.getBBox().height / 2;
         var x = hScale(d.x + d.x0) - hScale(d.x0) - this.getBBox().width - 5;
         return "translate(" + x + "," + y + ")";
@@ -2602,7 +2600,7 @@ var ccd3 = function () {
     var yFormat = this.chart.yAxis.format;
     this.color = this.chart._color(i);
 
-    var calc_x = function calc_x(d) {
+    var calc_x = function (d) {
       if (xAxis.scale_type === "ordinal") {
         return xScale(d.x) + xScale.rangeBand() / 2;
       } else {
@@ -2610,7 +2608,7 @@ var ccd3 = function () {
       }
     };
 
-    var calc_y = function calc_y(d) {
+    var calc_y = function (d) {
       if (yAxis.scale_type === "ordinal") {
         return yScale(d.y) + yScale.rangeBand() / 2;
       } else {
@@ -2978,7 +2976,7 @@ var ccd3 = function () {
     this.cScale = d3.scale.linear().range([this.low_color, this.high_color]).domain([zMin, zMax]).interpolate(d3.interpolateHsl);
     var cScale = this.cScale;
 
-    xy_func = function xy_func(d) {
+    xy_func = function (d) {
       var x = xScale(d.x);
 
       if (xAxis.scale_type !== "ordinal") {
@@ -2994,7 +2992,7 @@ var ccd3 = function () {
       return "translate(" + x + "," + y + ")";
     };
 
-    text_xy_func = function text_xy_func(d) {
+    text_xy_func = function (d) {
       var x = width / 2;
       var y = height / 2 + this.getBBox().height / 2;
       return "translate(" + x + "," + y + ")";
@@ -3208,7 +3206,7 @@ var ccd3 = function () {
     var i = this.series.series_num;
     this.color = this.chart._color(i);
 
-    var trans_xy = function trans_xy(d) {
+    var trans_xy = function (d) {
       return [Math.sin(aScale(d.x)) * rScale(d.y), Math.cos(aScale(d.x)) * rScale(d.y) * -1.0];
     };
 
@@ -3429,7 +3427,7 @@ var ccd3 = function () {
     var dataset = this.dataset;
     var min, step;
 
-    var sort_func = function sort_func(a, b) {
+    var sort_func = function (a, b) {
       return b - a;
     };
 
@@ -3643,7 +3641,7 @@ var ccd3 = function () {
       ar = [["label", "x", "y", "z"]];
       var row, d, j;
 
-      var voidFormat = function voidFormat(d) {
+      var voidFormat = function (d) {
         return d;
       };
 
@@ -3805,7 +3803,7 @@ var ccd3 = function () {
   ccd3.Util.merge = function (a, b) {
     for (var key in b) {
       if (b.hasOwnProperty(key)) {
-        a[key] = key in a ? _typeof(a[key]) === "object" && _typeof(b[key]) === "object" ? ccd3.Util.merge(a[key], b[key]) : b[key] : b[key];
+        a[key] = key in a ? typeof a[key] === "object" && typeof b[key] === "object" ? ccd3.Util.merge(a[key], b[key]) : b[key] : b[key];
       }
     }
 
@@ -3814,7 +3812,7 @@ var ccd3 = function () {
 
   ccd3.Util.copy = function (obj) {
     // deep copy dataset and so on.
-    if (null === obj || undefined === obj || "object" != _typeof(obj)) return obj;
+    if (null === obj || undefined === obj || "object" != typeof obj) return obj;
     var copy;
 
     if (obj instanceof Date) {
