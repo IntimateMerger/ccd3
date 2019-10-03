@@ -37,8 +37,8 @@ describe('puppeteer', () => {
     expect(image).toMatchImageSnapshot({
       failureThreshold: 0.01,
       failureThresholdType: 'percent',
-      customDiffDir: './snapshot/',
-      customSnapshotsDir: './snapshot/',
+      customDiffDir: './tests/report-snapshot/',
+      customSnapshotsDir: './tests/correct-snapshot/',
       updatePassedSnapshot: true,
     });
   });
