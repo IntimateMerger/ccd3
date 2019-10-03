@@ -46,7 +46,6 @@ describe('puppeteer', () => {
       failureThresholdType: 'percent',
       customDiffDir: './tests/report-snapshot/',
       customSnapshotsDir: './tests/correct-snapshot/',
-      updatePassedSnapshot: true,
     });
   });
 });
