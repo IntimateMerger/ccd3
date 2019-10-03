@@ -1,15 +1,17 @@
+<!doctype html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
 		<title>Test ccd3</title>
-		<link rel="stylesheet" href="./../src/ccd3.css" type="text/css" />
-		<link rel="stylesheet" href="./examples.css" type="text/css" />
-		<script type="text/javascript" src="./../vendor/d3.v3/d3.v3.js"></script>
-		<script type="text/javascript" src="./../src/ccd3.js"></script>
-		<script type="text/javascript" src="./catalog.js"></script>
-		<script type="text/javascript">
-(window.onload = () => {
+		<link rel="stylesheet" href="./../src/ccd3.css" type="text/css">
+		<link rel="stylesheet" href="./examples.css" type="text/css">
+		<script src="./../vendor/d3.v3/d3.v3.js"></script>
+		<script src="./../src/ccd3.js"></script>
+		<script src="./catalog.js"></script>
+		<script>
+window.addEventListener('load', () => {
 	var fullData = window.ccd3SampleData;
+
 	(function(){
 		var div_id = "chart1-1";
 		d3.select("#charts").append("div").attr("id",div_id).style("margin","20px");
