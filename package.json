@@ -5,7 +5,7 @@
   "main": "ccd3.js",
   "scripts": {
     "eslint": "npx eslint src/",
-    "test": "npm run eslint",
+    "test": "npm run eslint && npm run test:jest",
     "test:jest": "npx jest",
     "build:js": "npx gulp buildJs",
     "build:css": "npx gulp buildCss",

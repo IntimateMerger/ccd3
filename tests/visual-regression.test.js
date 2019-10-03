@@ -25,14 +25,19 @@ describe('puppeteer', () => {
   });
 
   test('puppeteer', async () => {
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({
+      args: [
+        '--disable-gpu',
+      ],
+    });
     const page = await browser.newPage();
     await page.goto(PAGE, {
       waitUntil: 'networkidle2',
     });
 
+    await page.waitFor(5);
+
     const image = await page.screenshot({
-      // path: './snapshot/screenshot.png',
       fullPage: true,
     });
   
