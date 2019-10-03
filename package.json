@@ -5,7 +5,8 @@
   "main": "ccd3.js",
   "scripts": {
     "eslint": "npx eslint src/",
-    "test": "npm run eslint",
+    "test": "npm run eslint && npm run test:jest",
+    "test:jest": "npx jest",
     "build:js": "npx gulp buildJs",
     "build:css": "npx gulp buildCss",
     "watch:js": "npx gulp watchJs",
@@ -15,6 +16,9 @@
     "minify:css": "npx gulp minifyCss",
     "minify": "npx gulp minify",
     "build": "npx gulp default"
+  },
+  "engines": {
+    "node": "^10.13.0"
   },
   "repository": {
     "type": "git",
@@ -29,6 +33,7 @@
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
+    "babel-jest": "^24.9.0",
     "eslint": "^6.5.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
@@ -36,7 +41,11 @@
     "gulp-eslint": "^6.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-terser": "^1.2.0",
-    "jasmine": "^3.5.0"
+    "http-server": "^0.11.1",
+    "jasmine": "^3.5.0",
+    "jest": "^24.9.0",
+    "jest-image-snapshot": "^2.11.0",
+    "puppeteer": "^1.20.0"
   },
   "dependencies": {}
 }
