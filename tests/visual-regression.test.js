@@ -6,6 +6,8 @@ const {toMatchImageSnapshot} = require('jest-image-snapshot');
 const PORT = process.env.PORT || 8985;
 const PAGE = `http://localhost:${PORT}/examples/catalog.html`;
 
+const testDirectory = path.resolve(__dirname);
+
 expect.extend({toMatchImageSnapshot});
 
 describe('puppeteer', () => {
@@ -44,8 +46,8 @@ describe('puppeteer', () => {
     expect(image).toMatchImageSnapshot({
       failureThreshold: 0.01,
       failureThresholdType: 'percent',
-      customDiffDir: './tests/report-snapshot/',
-      customSnapshotsDir: './tests/correct-snapshot/',
+      customDiffDir: `${testDirectory}/report-snapshot/`,
+      customSnapshotsDir: `${testDirectory}/correct-snapshot/`,
     });
   });
 });
