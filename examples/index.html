@@ -1,21 +1,19 @@
-<html>
+<!doctype html>
+<html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=8;IE=9"/>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=8;IE=9">
 		<title>Test ccd3</title>
-		<link rel="stylesheet" href="./../src/ccd3.css" type="text/css" />
-		<script type="text/javascript" src="./../vendor/d3.v3/d3.v3.js"></script>
-		<script type="text/javascript" src="./../src/ccd3.js"></script>
-		<script type="text/javascript" src="./../src/dataset_sample.js"></script>
+		<link rel="stylesheet" href="./../dist/ccd3.css" type="text/css">
+		<script src="./../vendor/d3.v3/d3.v3.js"></script>
+		<script src="./../dist/ccd3.js"></script>
+		<script src="./../dist/dataset_sample.js"></script>
 		<style type="text/css">
-<!--
 #charts > div{
 	float:left;
 }
--->
 		</style>
-		<script type="text/javascript">
-<!--
+		<script>
 window.onload = function(){
 	(function(){
 		var div_id = "chart1";
@@ -106,13 +104,13 @@ window.onload = function(){
 		});
 	})();
 };
--->
 		</script>
 	</head>
 	<body>
 		<h1>ccd3 sample charts</h1>
 		<ul>
 			<li><a href="./series_type.html">series_type examples</a></li>
+			<li><a href="./catalog.html">catalog</a></li>
 			<li><a href="./complex_series_type.html">complex series_type examples</a></li>
 			<li><a href="./heatmap.html">heatmap examples</a></li>
 			<li><a href="./pie.html">pie examples</a></li>
