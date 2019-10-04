@@ -19,3 +19,8 @@ ccd3
 
 ## Documents
 * See [wiki](https://github.com/g0e/ccd3/wiki)
+
+
+## Development
+
+* Node.js 10.x
