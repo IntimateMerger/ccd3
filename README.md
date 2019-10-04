@@ -23,4 +23,11 @@ ccd3
 
 ## Development
 
+### System Requirement
 * Node.js 10.x
+
+### Build
+
+```
+$ npm run build
+```
