@@ -19,3 +19,15 @@ ccd3
 
 ## Documents
 * See [wiki](https://github.com/g0e/ccd3/wiki)
+
+
+## Development
+
+### System Requirement
+* Node.js 10.x
+
+### Build
+
+```
+$ npm run build
+```
