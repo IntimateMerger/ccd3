@@ -49,5 +49,5 @@ describe('puppeteer', () => {
       customDiffDir: `${testDirectory}/report-snapshot/`,
       customSnapshotsDir: `${testDirectory}/correct-snapshot/`,
     });
-  });
+  }, 60000);
 });
